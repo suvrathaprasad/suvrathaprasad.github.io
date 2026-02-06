@@ -3,113 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suvratha Jayaprasad | Bioinformatics Scientist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Suvratha Jayaprasad - Bioinformatics Scientist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a4d2e;
-            --secondary: #4f8a6f;
-            --accent: #d4af37;
-            --dark: #0f1a14;
-            --light: #f8f9f5;
-            --text: #2c3e35;
-            --gray: #7a8a80;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --accent-blue: #58a6ff;
+            --accent-purple: #bc8cff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border: #30363d;
+            --gradient: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
         }
 
         body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: var(--text);
-            background: var(--light);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* Navigation */
-        nav {
+        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(248, 249, 245, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(26, 77, 46, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
         }
 
-        nav.scrolled {
-            padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        nav .container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo {
-            font-family: 'Playfair Display', serif;
+        .brand {
+            font-family: 'Libre Baskerville', serif;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
+            list-style: none;
         }
 
-        nav a {
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            color: var(--text);
-            font-weight: 400;
-            transition: color 0.3s ease;
-            position: relative;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
+        .nav-links a:hover {
+            color: var(--accent-blue);
         }
 
         /* Hero Section */
@@ -117,245 +81,234 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f8f9f5 0%, #e8ede5 100%);
-            position: relative;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(26, 77, 46, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(79, 138, 111, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
+            padding: 8rem 2rem 4rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.3fr 1fr;
             gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
+            width: 100%;
         }
 
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
+        .hero-content h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 4rem;
+            line-height: 1.1;
             margin-bottom: 1rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-text .subtitle {
-            font-size: 1.4rem;
-            color: var(--secondary);
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
             margin-bottom: 1.5rem;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
-        .hero-text p {
+        .hero-bio {
+            color: var(--text-secondary);
             font-size: 1.1rem;
-            color: var(--gray);
+            line-height: 1.8;
             margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
         }
 
-        .hero-buttons {
+        .hero-actions {
             display: flex;
             gap: 1rem;
-            animation: fadeInUp 0.8s ease 0.6s backwards;
         }
 
         .btn {
-            padding: 0.9rem 2rem;
-            text-decoration: none;
+            padding: 0.8rem 1.8rem;
             border-radius: 6px;
+            text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             display: inline-block;
-            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--gradient);
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--secondary);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26, 77, 46, 0.2);
+            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.3);
         }
 
         .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
+            background: var(--accent-blue);
             color: white;
-            transform: translateY(-2px);
         }
 
-        .hero-image {
-            position: relative;
-            animation: fadeIn 1s ease 0.4s backwards;
+        .hero-image-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            right: -20px;
+        .profile-img {
             width: 100%;
-            height: 100%;
-            border: 3px solid var(--accent);
+            aspect-ratio: 1;
             border-radius: 12px;
-            z-index: -1;
+            background: var(--gradient);
+            object-fit: cover;
         }
 
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
 
-        /* Sections */
+        .stat-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Section */
         section {
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
+        .section-header {
             margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            margin: 1rem auto 0;
-            border-radius: 2px;
+        .section-label {
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
 
-        /* About Section */
-        #about {
-            background: white;
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.5rem;
+            margin: 0.5rem 0 1rem;
         }
 
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* About */
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
         }
 
         .about-text {
-            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
             line-height: 1.8;
-            color: var(--gray);
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
-        .about-stats {
-            background: var(--light);
-            padding: 2rem;
+        .expertise-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            border-left: 4px solid var(--accent);
+            padding: 2rem;
         }
 
-        .stat {
+        .expertise-box h3 {
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
+            color: var(--accent-blue);
         }
 
-        .stat h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
+        .expertise-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
         }
 
-        .stat p {
-            color: var(--gray);
-            font-size: 0.95rem;
+        .expertise-item:last-child {
+            border-bottom: none;
         }
 
-        /* Skills Section */
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .skill-card {
-            background: white;
-            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-top: 3px solid var(--accent);
+            padding: 2rem;
+            transition: all 0.3s;
         }
 
         .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
         }
 
         .skill-card h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
         }
 
-        .skill-tags {
+        .skill-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .skill-tag {
-            background: var(--light);
-            color: var(--text);
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            color: var(--accent-blue);
             padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(26, 77, 46, 0.1);
+            border-radius: 4px;
+            font-size: 0.85rem;
         }
 
-        /* Experience Section */
-        #experience {
-            background: white;
-        }
-
+        /* Experience */
         .timeline {
             position: relative;
-            padding-left: 3rem;
+            padding-left: 2rem;
         }
 
         .timeline::before {
@@ -365,509 +318,603 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--accent);
+            background: var(--gradient);
         }
 
-        .timeline-item {
+        .timeline-entry {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            margin-left: 2rem;
             position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
         }
 
-        .timeline-item::before {
+        .timeline-entry::before {
             content: '';
             position: absolute;
-            left: -3.5rem;
-            top: 0;
-            width: 16px;
-            height: 16px;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: var(--accent);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--light);
+            background: var(--accent-blue);
+            border: 3px solid var(--bg-dark);
         }
 
-        .timeline-item h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .timeline-entry:hover {
+            border-color: var(--accent-blue);
         }
 
-        .timeline-item .position {
-            color: var(--secondary);
+        .timeline-header {
+            margin-bottom: 1.2rem;
+        }
+
+        .timeline-header h3 {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-role {
             font-weight: 600;
             margin-bottom: 0.3rem;
         }
 
-        .timeline-item .duration {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
-        .timeline-item ul {
+        .timeline-content ul {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
         }
 
-        .timeline-item li {
+        .timeline-content li {
+            color: var(--text-secondary);
             padding-left: 1.5rem;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.8rem;
             position: relative;
-            color: var(--gray);
-            line-height: 1.6;
         }
 
-        .timeline-item li::before {
+        .timeline-content li::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--accent-purple);
         }
 
         /* Publications */
-        .publications {
-            background: var(--light);
+        .publications-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .pub-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 8px;
             padding: 2rem;
-            border-radius: 12px;
-            margin-top: 3rem;
+            transition: all 0.3s;
         }
 
-        .publications h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .pub-item:hover {
+            border-left-color: var(--accent-blue);
+            transform: translateX(8px);
         }
 
-        .publications a {
-            color: var(--secondary);
-            text-decoration: none;
+        .pub-title {
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
         }
 
-        .publications a:hover {
-            color: var(--primary);
-            text-decoration: underline;
+        .pub-authors {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
         }
 
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
+        .pub-authors strong {
+            color: var(--accent-blue);
         }
 
-        #contact .section-title {
-            color: white;
-        }
-
-        #contact .section-title::after {
-            background: var(--accent);
-        }
-
-        .contact-content p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-
-        .contact-links {
+        .pub-footer {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
             flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .pub-journal {
+            color: var(--accent-purple);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .pub-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .pub-link:hover {
+            color: var(--accent-purple);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            min-width: 250px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
         }
 
         .contact-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
         }
 
-        .contact-card h4 {
-            font-family: 'Playfair Display', serif;
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-blue);
         }
 
         .contact-card a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
+            transition: color 0.3s;
         }
 
         .contact-card a:hover {
-            opacity: 1;
-            text-decoration: underline;
+            color: var(--accent-blue);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
             text-align: center;
             padding: 2rem;
-            font-size: 0.95rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
         }
 
-        footer p {
-            opacity: 0.7;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* Mobile Menu */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* Responsive */
         @media (max-width: 968px) {
-            .hero-content {
+            .hero-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                max-width: 400px;
-                margin: 0 auto;
+            .hero-content h1 {
+                font-size: 3rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
             }
 
-            nav ul {
+            .nav-links {
                 display: none;
             }
 
-            .mobile-menu-btn {
+            .menu-btn {
                 display: block;
             }
 
-            nav ul.active {
+            .nav-links.active {
                 display: flex;
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(248, 249, 245, 0.98);
-                padding: 2rem;
-                gap: 1rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
-
-            .timeline-item::before {
-                left: -2.4rem;
+                background: var(--bg-dark);
+                border-top: 1px solid var(--border);
+                padding: 1rem 2rem;
             }
         }
 
         @media (max-width: 640px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1.1rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .contact-links {
+            .hero-actions {
                 flex-direction: column;
-                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="#home" class="logo">SJ</a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <ul id="nav-menu">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">SJ</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
+        <div class="hero-grid">
+            <div class="hero-content">
                 <h1>Suvratha Jayaprasad</h1>
-                <p class="subtitle">Bioinformatics Scientist</p>
-                <p>Specializing in genomics, statistical genetics, and machine learning. Building reproducible pipelines for multi-omics data analysis with expertise in Python, R, and advanced sequencing technologies.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-outline">View Experience</a>
+                <div class="hero-subtitle">Bioinformatics Scientist & Genomics Researcher</div>
+                <p class="hero-bio">
+                    PhD researcher specializing in evolutionary genomics and statistical genetics. 
+                    Building computational pipelines to decode complex biological systems with 8+ 
+                    peer-reviewed publications in top-tier journals.
+                </p>
+                <div class="hero-actions">
+                    <a href="#publications" class="btn btn-primary">Research Portfolio</a>
+                    <a href="#contact" class="btn btn-outline">Connect</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Placeholder - replace with your photo -->
-                <img src="https://via.placeholder.com/500x600/1a4d2e/ffffff?text=Your+Photo+Here" alt="Suvratha Jayaprasad">
+            <div class="hero-image-section">
+                <img src="https://via.placeholder.com/400x400/58a6ff/ffffff?text=Your+Photo" alt="Suvratha Jayaprasad" class="profile-img">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Years Research</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">PhD</div>
+                        <div class="stat-label">Bioinformatics</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">First Author</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
+        <div class="section-header">
+            <div class="section-label">WHO I AM</div>
+            <h2 class="section-title">About</h2>
+            <p class="section-desc">Bridging computational biology and evolutionary genomics</p>
+        </div>
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    I'm a bioinformatics scientist with a PhD from Friedrich Schiller Universität, specializing in evolutionary biology and statistical genomics. My research focuses on building reproducible data pipelines for complex omics datasets and applying advanced computational methods to uncover biological insights.
+                    I'm a computational biologist with a PhD from Friedrich Schiller Universität Jena, 
+                    specializing in evolutionary genomics and statistical genetics. My research focuses 
+                    on understanding sex chromosome evolution through large-scale genomics and 
+                    transcriptomics analysis.
                 </p>
                 <p>
-                    With over six years of experience across academic and research institutions in Germany and India, I've developed expertise in analyzing large-scale NGS data, implementing machine learning models, and managing end-to-end bioinformatics workflows. My work spans genomics, transcriptomics, and proteomics, with a particular focus on sex chromosome evolution and dosage compensation mechanisms.
+                    Over six years of research across Germany and India, I've developed expertise in 
+                    building reproducible bioinformatics pipelines that process multi-terabyte datasets. 
+                    My work combines advanced statistical methods, machine learning, and cloud computing 
+                    to uncover biological insights.
                 </p>
                 <p>
-                    I'm passionate about translating complex biological data into actionable insights using cutting-edge computational approaches. Currently, I'm exploring opportunities where I can apply my skills in data-driven research to solve real-world health challenges.
+                    With 8 publications in journals including <em>Genome Biology and Evolution</em>, 
+                    <em>Molecular Ecology</em>, and <em>Scientific Data</em>, I've contributed to 
+                    advancing our understanding of dosage compensation, chromosome evolution, and 
+                    genome assemblies across diverse species.
                 </p>
             </div>
-            <div class="about-stats">
-                <div class="stat">
-                    <h3>6+</h3>
-                    <p>Years of Experience</p>
-                </div>
-                <div class="stat">
-                    <h3>PhD</h3>
-                    <p>Bioinformatics</p>
-                </div>
-                <div class="stat">
-                    <h3>Python | R</h3>
-                    <p>Core Languages</p>
-                </div>
-                <div class="stat">
-                    <h3>Multi-Omics</h3>
-                    <p>Data Analysis</p>
-                </div>
+            <div class="expertise-box">
+                <h3>Research Focus</h3>
+                <div class="expertise-item">Sex Chromosome Evolution</div>
+                <div class="expertise-item">Dosage Compensation</div>
+                <div class="expertise-item">Comparative Genomics</div>
+                <div class="expertise-item">Statistical Genetics</div>
+                <div class="expertise-item">Multi-Omics Analysis</div>
+                <div class="expertise-item">Machine Learning Pipelines</div>
+                <div class="expertise-item">Reproducible Research</div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-header">
+            <div class="section-label">CAPABILITIES</div>
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-desc">Full-stack computational biology expertise</p>
+        </div>
         <div class="skills-grid">
             <div class="skill-card">
-                <h3>Programming & Data Science</h3>
-                <div class="skill-tags">
+                <h3>Programming</h3>
+                <div class="skill-items">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">R</span>
                     <span class="skill-tag">Bash</span>
                     <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">Pandas</span>
                     <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Biopython</span>
                     <span class="skill-tag">Matplotlib</span>
                     <span class="skill-tag">Seaborn</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Bioinformatics</h3>
-                <div class="skill-tags">
+                <h3>Genomics</h3>
+                <div class="skill-items">
                     <span class="skill-tag">NGS Analysis</span>
                     <span class="skill-tag">RNA-Seq</span>
                     <span class="skill-tag">Single-cell</span>
-                    <span class="skill-tag">Genomics Pipelines</span>
+                    <span class="skill-tag">Genome Assembly</span>
+                    <span class="skill-tag">Variant Calling</span>
                     <span class="skill-tag">Differential Expression</span>
-                    <span class="skill-tag">Variant Analysis</span>
+                    <span class="skill-tag">Comparative Genomics</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Machine Learning</h3>
-                <div class="skill-tags">
+                <h3>Statistics & ML</h3>
+                <div class="skill-items">
+                    <span class="skill-tag">Statistical Modeling</span>
                     <span class="skill-tag">Feature Selection</span>
                     <span class="skill-tag">Data Preprocessing</span>
                     <span class="skill-tag">Model Validation</span>
-                    <span class="skill-tag">ROC-AUC Analysis</span>
-                    <span class="skill-tag">Statistical Modeling</span>
+                    <span class="skill-tag">ROC-AUC</span>
+                    <span class="skill-tag">Clustering</span>
+                    <span class="skill-tag">Biostatistics</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Infrastructure & Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Cloud Computing</span>
+                <h3>Infrastructure</h3>
+                <div class="skill-items">
+                    <span class="skill-tag">Linux/Unix</span>
                     <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">SQL/NoSQL</span>
+                    <span class="skill-tag">Cloud Computing</span>
                     <span class="skill-tag">Git</span>
+                    <span class="skill-tag">SQL/NoSQL</span>
+                    <span class="skill-tag">HPC</span>
                     <span class="skill-tag">Workflow Automation</span>
-                    <span class="skill-tag">Database Management</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
+        <div class="section-header">
+            <div class="section-label">CAREER PATH</div>
+            <h2 class="section-title">Experience</h2>
+            <p class="section-desc">Research journey across leading institutions</p>
+        </div>
         <div class="timeline">
-            <div class="timeline-item">
-                <h3>Friedrich Schiller Universität</h3>
-                <p class="position">Doctoral Researcher - Bioinformatics & Statistical Genomics</p>
-                <p class="duration">September 2021 - March 2025 | Jena, Germany</p>
-                <ul>
-                    <li>Built end-to-end bioinformatics pipelines for large-scale NGS genomics and transcriptomics data, processing multi-TB datasets with Python, R, and cloud computing</li>
-                    <li>Applied advanced statistical methods and feature selection to analyze high-dimensional omics data, uncovering mechanisms in sex chromosome evolution</li>
-                    <li>Developed reproducible, automated workflows for comparative genomics and differential expression analysis</li>
-                    <li>Published research with archived datasets and documented analysis pipelines</li>
-                </ul>
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <h3>Friedrich Schiller Universität</h3>
+                    <div class="timeline-role">Doctoral Researcher - Bioinformatics & Statistical Genomics</div>
+                    <div class="timeline-date">September 2021 - March 2025 | Jena, Germany</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Published 3 first-author papers on sex chromosome evolution in Genome Biology and Evolution and Molecular Ecology</li>
+                        <li>Built end-to-end bioinformatics pipelines processing multi-TB NGS datasets with Python, R, and cloud computing</li>
+                        <li>Applied machine learning and statistical methods to high-dimensional omics data, uncovering dosage compensation mechanisms</li>
+                        <li>Developed reproducible workflows for comparative genomics and differential expression analysis</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-item">
-                <h3>Ulm Universität</h3>
-                <p class="position">Project Assistant - Single-Cell Genomics</p>
-                <p class="duration">November 2019 - April 2020 | Ulm, Germany</p>
-                <ul>
-                    <li>Analyzed single-cell RNA-Seq data using clustering algorithms and dimensionality reduction techniques</li>
-                    <li>Applied feature selection and data preprocessing to extract patterns from high-dimensional datasets</li>
-                    <li>Integrated computational results with experimental workflows in agile research environment</li>
-                </ul>
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <h3>Ulm Universität</h3>
+                    <div class="timeline-role">Project Assistant - Single-Cell Genomics</div>
+                    <div class="timeline-date">November 2019 - April 2020 | Ulm, Germany</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Characterized transcriptional heterogeneity in cortex using single-cell RNA-Seq clustering and differential expression</li>
+                        <li>Applied dimensionality reduction and feature selection to high-dimensional molecular datasets</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-item">
-                <h3>Institute of Bioinformatics and Applied Biotechnology</h3>
-                <p class="position">Junior Research Fellow - Multi-Omics Data Analysis</p>
-                <p class="duration">August 2017 - October 2019 | Bengaluru, India</p>
-                <ul>
-                    <li>Optimized Linux-based genomics pipelines for genome assembly, annotation, and variant analysis</li>
-                    <li>Performed statistical analysis on population-scale and cancer genomics datasets</li>
-                    <li>Managed relational databases for large-scale molecular data storage and querying</li>
-                    <li>Developed automated workflows for comparative genomics</li>
-                </ul>
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <h3>Institute of Bioinformatics and Applied Biotechnology</h3>
+                    <div class="timeline-role">Junior Research Fellow - Multi-Omics Analysis</div>
+                    <div class="timeline-date">August 2017 - October 2019 | Bengaluru, India</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Co-authored 5 publications on genome assemblies across diverse species</li>
+                        <li>Optimized genomics pipelines for assembly, annotation, and variant analysis</li>
+                        <li>Managed databases for large-scale molecular data storage and retrieval</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-item">
-                <h3>National Center for Biological Sciences</h3>
-                <p class="position">Project Assistant - Transcriptomics Analysis</p>
-                <p class="duration">July 2016 - December 2016 | Bengaluru, India</p>
-                <ul>
-                    <li>Analyzed bulk RNA-Seq datasets using differential expression methods</li>
-                    <li>Applied data preprocessing and quality control for robust transcriptomic analysis</li>
-                </ul>
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <h3>National Center for Biological Sciences</h3>
+                    <div class="timeline-role">Project Assistant - Transcriptomics</div>
+                    <div class="timeline-date">July 2016 - December 2016 | Bengaluru, India</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Analyzed bulk RNA-Seq datasets using differential expression and statistical validation</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-        <div class="publications">
-            <h3>📚 Publications</h3>
-            <p>
-                <strong>PhD Thesis:</strong> Sex Chromosome Evolution and Dosage Compensation<br>
-                <a href="https://doi.org/10.6084/m9.figshare.29104424.v1" target="_blank">https://doi.org/10.6084/m9.figshare.29104424.v1</a>
-            </p>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <section id="publications">
+        <div class="section-header">
+            <div class="section-label">RESEARCH OUTPUT</div>
+            <h2 class="section-title">Publications</h2>
+            <p class="section-desc">8 peer-reviewed publications in top-tier journals</p>
+        </div>
+        <div class="publications-list">
+            <div class="pub-item">
+                <div class="pub-title">Evolutionary dynamics of dosage compensation and sex-biased gene expression in morabine grasshopper Vandiemenella viatica</div>
+                <div class="pub-authors"><strong>Suvratha Jayaprasad</strong>, Holger Schielzeth, Octavio M. Palacios-Gimenez</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Genome Biology and Evolution (2024)</div>
+                    <a href="https://doi.org/10.1093/gbe/evag026" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Orthopteran Neo-Sex Chromosomes Reveal Dynamics of Recombination Suppression and Evolution of Supergenes</div>
+                <div class="pub-authors"><strong>Suvratha Jayaprasad</strong>, Valentina Peona, Simon J. Ellerstrand, Roberto Rossini, Ignas Bunikis, Olga V. Pettersson, Remi-André Olsen, Carl-Johan Rubin, Elisabet Einarsdottir, Franziska Bonath, Tessa M. Bradford, Steven J. B. Cooper, Bengt Hansson, Alexander Suh, Takeshi Kawakami, Holger Schielzeth, Octavio M. Palacios-Gimenez</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Molecular Ecology (2024)</div>
+                    <a href="https://doi.org/10.1111/mec.17567" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Chromosome-level genome assembly of the morabine grasshopper Vandiemenella viatica19</div>
+                <div class="pub-authors">Li, X., <strong>Jayaprasad, S.</strong>, Einarsdottir, E. et al.</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Scientific Data (2024)</div>
+                    <a href="https://doi.org/10.1038/s41597-024-03858-0" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">A near-chromosome level genome assembly of Anopheles stephensi</div>
+                <div class="pub-authors">Afiya Razia Chida*, Samathmika Ravi*, <strong>Suvratha Jayaprasad*</strong>, Kiran Paul, Jaysmita Saha, Chinjusha Suresh, Saurabh Whadgar, Naveen Kumar, Raksha Rao K, Chaitali Ghosh, Bibha Choudhary, Suresh Subramani, Subhashini Srinivasan (*equal contributions)</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Frontiers in Genetics (2020)</div>
+                    <a href="https://doi.org/10.3389/fgene.2020.565626" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Hidden features of the malaria vector mosquito, Anopheles stephensi, revealed by a high-quality reference genome</div>
+                <div class="pub-authors">Mahul Chakraborty, Arunachalam Ramaiah, Adriana Adolfi, Paige Halas, Bhagyashree Kaduskar, Luna Thanh Ngo, <strong>Suvratha Jayaprasad</strong>, Kiran Paul, Saurabh Whadgar, Subhashini Srinivasan, Suresh Subramani, Ethan Bier, Anthony A. James, J. J. Emerson</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">BMC Biology (2021)</div>
+                    <a href="https://doi.org/10.1186/s12915-021-00963-z" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Classification of grain amaranths using chromosome-level genome assembly of ramdana, A. hypochondriacus</div>
+                <div class="pub-authors">Saptarathi Deb*, <strong>Suvratha J.*</strong>, Samathmika Ravi, Raksha Rao K, Saurabh Whadgar, Nivedita Hariharan, Shubham Dixit, Meeta Sunil, Bibha Choudhary, Piergiorgio Stevanato, Eswarayya Ramireddy, Subhashini Srinivasan (*equal contributions)</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Frontiers in Plant Science (2020)</div>
+                    <a href="https://doi.org/10.3389/fpls.2020.579529" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Multidimensional Mutational Profiling of the Indian HNSCC sub-population Provides IRAK1, A novel Driver gene and Potential Druggable target</div>
+                <div class="pub-authors">Sagar Sanjiv Desai, Raksha Rao K, Priyatam Dutta, Gaurav Atre, Anika Jain, Anand Subhash, Vishal U S Rao, Pushpinder Singh Bawa, <strong>Suvratha J</strong>, Subhashini Srinivasan</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Frontiers in Oncology (2021)</div>
+                    <a href="https://doi.org/10.3389/fonc.2021.723162" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Evolutionary Genomics of an Ancient Prophage of the Order Sphingomonodales</div>
+                <div class="pub-authors">Vandana Viswanathan, Anushree Narjala, Aravind Ravichandran, <strong>Suvratha Jayaprasad</strong>, Shivakumara Sidramappa</div>
+                <div class="pub-footer">
+                    <div class="pub-journal">Genome Biology and Evolution (2017)</div>
+                    <a href="https://doi.org/10.1093/gbe/evx113" target="_blank" class="pub-link">View Paper →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-content">
-            <p>I'm always open to discussing research opportunities, collaborations, or interesting bioinformatics projects.</p>
-            <div class="contact-links">
-                <div class="contact-card">
-                    <h4>📧 Email</h4>
-                    <a href="mailto:suvratha@gmail.com">suvratha@gmail.com</a>
-                </div>
-                <div class="contact-card">
-                    <h4>💼 LinkedIn</h4>
-                    <a href="https://linkedin.com/in/suvratha" target="_blank">linkedin.com/in/suvratha</a>
-                </div>
-                <div class="contact-card">
-                    <h4>📍 Location</h4>
-                    <p>Jena, Germany</p>
-                </div>
+        <div class="section-header">
+            <div class="section-label">GET IN TOUCH</div>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-desc">Open to collaborations and opportunities</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:suvratha@gmail.com">suvratha@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/suvratha" target="_blank">linkedin.com/in/suvratha</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <p>Jena, Germany</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🎓</div>
+                <h3>PhD Thesis</h3>
+                <a href="https://doi.org/10.6084/m9.figshare.29104424.v1" target="_blank">View Thesis</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Suvratha Jayaprasad. All rights reserved.</p>
+        <p>&copy; 2026 Suvratha Jayaprasad. Built for open science.</p>
     </footer>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
         function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
         }
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#nav-menu a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
             });
         });
 
-        // Smooth scroll offset for fixed navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
                     window.scrollTo({
-                        top: targetPosition,
+                        top: target.offsetTop - 70,
                         behavior: 'smooth'
                     });
                 }
