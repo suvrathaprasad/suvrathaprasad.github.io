@@ -199,6 +199,7 @@
             }
         }
     </style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
@@ -236,8 +237,6 @@
                 <a href="#project-yeast" class="research-nav-btn">Yeast Genomics</a>
                 <a href="#project-cancer" class="research-nav-btn">Cancer Variant Analysis</a>
                 <a href="#project-grapevine" class="research-nav-btn">Grapevine Transcriptomics</a>
-                <a href="#project-gem" class="research-nav-btn">GEM-SnakeMake</a>
-                <a href="#project-myclopcls" class="research-nav-btn">mycoPCLS-Analysis</a>
             </div>
         </div>
 
@@ -339,7 +338,7 @@
             </div>
             <div class="project-content">
                 <p>
-                    I analysed repeat elements and cyanobacterial content in Amaranthus hypochondriacus using integrated genomic and metagenomic datasets. Metagenomic data were specifically levered to characterize the microbial content of soils from different geographic regions where the plant was cultivated, enabling insights into region-specific metagenomic composition and its potential influence on genome assembly and annotation.
+                    I analysed repeat elements and cyanobacterial content in Amaranthus hypochondriacus using integrated genomic and metagenomic datasets. Metagenomic data were specifically leveraged to characterize the microbial content of soils from different geographic regions where the plant was cultivated, enabling insights into region-specific metagenomic composition and its potential influence on genome assembly and annotation.
                 </p>
                 <p>
                     Building on an existing chromosome-level reference, I generated an improved Amaranthus hypochondriacus genome through multiple rounds of iterative assembly refinement. This work involved the development of robust, fully reproducible analysis pipelines spanning repeat analysis, metagenomic profiling, and assembly improvement. These efforts, along with additional supporting analyses, culminated in a peer-reviewed publication, which is available on the Publications page.
@@ -533,84 +532,6 @@
                 <div class="meta-item">
                     <span class="meta-label">Institution</span>
                     <span class="meta-value">NCBS</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 9: GEM-SnakeMake -->
-        <div id="project-gem" class="project-card">
-            <div class="project-header">
-                <div class="project-title">
-                    <h2>Genome-Scale Metabolic Modeling Pipeline for STEC Strains</h2>
-                    <p class="project-organism">Shiga toxin-producing Escherichia coli (STEC)</p>
-                </div>
-            </div>
-            <div class="project-tags">
-                <span class="project-tag">Snakemake</span>
-                <span class="project-tag">Metabolic Modeling</span>
-                <span class="project-tag">COBRApy</span>
-                <span class="project-tag">Genome Assembly</span>
-                <span class="project-tag">Annotation</span>
-            </div>
-            <div class="project-content">
-                <p>
-                   A Snakemake workflow that assembles, annotates, and builds genome-scale metabolic models for STEC strains, tests growth predictions with COBRApy, compares them to Biolog phenotype data, and generates per-strain PDF summary reports. The pipeline integrates multiple bioinformatics tools to create a reproducible workflow for functional genome annotation and phenotypic prediction in pathogenic E. coli strains.
-                </p>
-                <p>
-                    The workflow includes genome assembly, functional annotation, metabolic model reconstruction, growth simulation under various conditions, and comparative analysis with experimental phenotype data. This enables systematic investigation of genotype-phenotype relationships in foodborne pathogens.
-                </p>
-            </div>
-            <div class="project-meta">
-                <div class="meta-item">
-                    <span class="meta-label">Repository</span>
-                    <span class="meta-value">GitHub</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Technology</span>
-                    <span class="meta-value">Snakemake, COBRApy</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Application</span>
-                    <span class="meta-value">Pathogen Genomics</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 10: mycoPCLS-analysis -->
-        <div id="project-myclopcls" class="project-card">
-            <div class="project-header">
-                <div class="project-title">
-                    <h2>RNA-Seq Analysis Pipeline for Precision-Cut Lung Slice Data</h2>
-                    <p class="project-organism">Cattle, Sheep and Goat</p>
-                </div>
-            </div>
-            <div class="project-tags">
-                <span class="project-tag">Nextflow</span>
-                <span class="project-tag">RNA-Seq</span>
-                <span class="project-tag">Differential Expression</span>
-                <span class="project-tag">GO/KEGG Enrichment</span>
-                <span class="project-tag">Lung Biology</span>
-            </div>
-            <div class="project-content">
-                <p>
-                    A Nextflow-based RNA-Seq pipeline for precision-cut lung slice data from cattle and sheep. The pipeline covers quality control, alignment, DESeq2 differential expression analysis, GO/KEGG enrichment, and the creation of summary tables and publication-ready plots for studying lung tissue responses to various stimuli and infections.
-                </p>
-                <p>
-                    The workflow includes raw read processing, quality control, alignment to reference genomes, gene expression quantification, differential expression analysis, functional enrichment analysis, and generation of publication-ready visualizations. This enables standardized analysis of lung slice experiments in veterinary and biomedical research.
-                </p>
-            </div>
-            <div class="project-meta">
-                <div class="meta-item">
-                    <span class="meta-label">Repository</span>
-                    <span class="meta-value">GitLab (mirrored on GitHub)</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Technology</span>
-                    <span class="meta-value">Nextflow, DESeq2</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Application</span>
-                    <span class="meta-value">Veterinary Transcriptomics</span>
                 </div>
             </div>
         </div>
