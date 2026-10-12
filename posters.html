@@ -6,148 +6,6 @@
     <title>Conference Posters - Suvratha Jayaprasad</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional styles for posters page */
-        .posters-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .poster-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent-blue);
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: all 0.3s;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .poster-card:hover {
-            border-left-color: var(--accent-purple);
-            transform: translateX(8px);
-            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.15);
-        }
-
-        .poster-icon {
-            font-size: 3rem;
-            opacity: 0.7;
-        }
-
-        .poster-content {
-            flex: 1;
-        }
-
-        .poster-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-        }
-
-        .poster-event {
-            color: var(--accent-purple);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        .poster-meta {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .poster-location,
-        .poster-year {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .poster-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .poster-link {
-            background: var(--accent-blue);
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .poster-link:hover {
-            background: var(--accent-purple);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
-        }
-
-        .poster-link::after {
-            content: ' →';
-        }
-
-        .add-poster-note {
-            background: rgba(188, 140, 255, 0.1);
-            border: 1px solid rgba(188, 140, 255, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        .add-poster-note h3 {
-            color: var(--accent-purple);
-            margin-bottom: 1rem;
-        }
-
-        .add-poster-note p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .add-poster-note code {
-            background: var(--bg-card);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            color: var(--accent-blue);
-            font-family: monospace;
-        }
-
-        @media (max-width: 968px) {
-            .poster-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .poster-icon {
-                display: none;
-            }
-
-            .poster-actions {
-                width: 100%;
-            }
-
-            .poster-link {
-                width: 100%;
-            }
-        }
-    </style>
-<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
@@ -171,8 +29,6 @@
             <div class="section-label">PRESENTATIONS</div>
             <h1 class="section-title">Conference Posters</h1>
             <p class="section-desc">Scientific posters presented at international and national conferences</p>
-        </div>
-
         <div class="posters-grid">
             <!-- Poster 1 -->
             <div class="poster-card">
@@ -187,111 +43,40 @@
                 </div>
                 <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288387" target="_blank" class="poster-link">View Poster</a>
-                </div>
             </div>
-
             <!-- Poster 2 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
                     <div class="poster-event">Plant and Animal Genome (PAG) Conference 2019</div>
                     <div class="poster-title">High-Quality Reference Genome of Anopheles stephensi</div>
-                    <div class="poster-meta">
                         <span class="poster-location">📍 San Diego, California, USA</span>
                         <span class="poster-year">📅 2019</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288351" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
-
              <!-- Poster 3 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
                     <div class="poster-event">IBAB Research Symposium</div>
                     <div class="poster-title">Genome Assembly and Analysis of Amaranthus hypochondriacus</div>
-                    <div class="poster-meta">
                         <span class="poster-location">📍 Bengaluru, India</span>
                         <span class="poster-year">📅 2018</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288384" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
-
             <!-- Poster 4 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
                     <div class="poster-event">Plant and Animal Genome (PAG) Conference 2018</div>
                     <div class="poster-title">Repeat Element Analysis in Amaranthus Genome</div>
-                    <div class="poster-meta">
-                        <span class="poster-location">📍 San Diego, California, USA</span>
-                        <span class="poster-year">📅 2018</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288375" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
-
             <!-- Poster 5 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
-                    <div class="poster-event">Plant and Animal Genome (PAG) Conference 2018</div>
                     <div class="poster-title">Metagenomics Analysis of Amaranthus hypochondriacus</div>
-                    <div class="poster-meta">
-                        <span class="poster-location">📍 San Diego, California, USA</span>
-                        <span class="poster-year">📅 2018</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288378" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
             
             <!-- Poster 6 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
                     <div class="poster-event">InSTEM Campus Symposium</div>
                     <div class="poster-title">Genomic Analysis of Malaria Vector Anopheles stephensi</div>
-                    <div class="poster-meta">
-                        <span class="poster-location">📍 Bengaluru, India</span>
-                        <span class="poster-year">📅 2018</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288381" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
-
             <!-- Poster 7 -->
-            <div class="poster-card">
-                <div class="poster-icon">📊</div>
-                <div class="poster-content">
                     <div class="poster-event">IBAB Master's Thesis Presentation</div>
                     <div class="poster-title">Master's Thesis Research in Bioinformatics</div>
-                    <div class="poster-meta">
-                        <span class="poster-location">📍 Bengaluru, India</span>
                         <span class="poster-year">📅 2016</span>
-                    </div>
-                </div>
-                <div class="poster-actions">
                     <a href="https://doi.org/10.6084/m9.figshare.31288390" target="_blank" class="poster-link">View Poster</a>
-                </div>
-            </div>
-        </div>
     </section>
-
     <footer>
         <p>&copy; 2026 Suvratha Jayaprasad. Built for open science.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
