@@ -1539,3 +1539,8 @@ footer {
         padding: 1.15rem;
     }
 }
+/* Highlight your name in publication author lists */
+.pub-authors strong {
+    color: var(--accent-blue);
+    font-weight: 700;
+}
