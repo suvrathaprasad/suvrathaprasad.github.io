@@ -397,6 +397,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <nav class="navbar">
@@ -412,6 +413,15 @@
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="posters.html">Posters</a></li>
             </ul>
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Switch to light mode"
+                title="Switch to light mode"
+            >
+                <span id="themeIcon" aria-hidden="true">☀</span>
+            </button>
         </div>
     </nav>
     <section id="home" class="hero">
@@ -555,6 +565,8 @@
         <p>&copy; 2026 Suvratha Jayaprasad. Built for open science.</p>
     </footer>
 
+    <script src="script.js"></script>
+    
     <script>
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
