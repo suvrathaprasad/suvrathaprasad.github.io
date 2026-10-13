@@ -1,174 +1,76 @@
-/* =====================================================
-   THEME SUPPORT
-   Dark mode is the default.
-   Light mode is enabled by html[data-theme="light"].
-   ===================================================== */
+/* Theme toggle and shared navigation */
 
-:root {
-    color-scheme: dark;
-}
+const THEME_STORAGE_KEY = "suvratha-portfolio-theme";
 
-/* Keep the existing dark palette unchanged. */
-html[data-theme="dark"] {
-    color-scheme: dark;
-}
-
-/* Light palette */
-html[data-theme="light"] {
-    color-scheme: light;
-
-    --bg-dark: #f6f8fc;
-    --bg-card: #ffffff;
-    --bg-card-hover: #edf2fa;
-
-    --accent-blue: #245fbd;
-    --accent-purple: #7650a8;
-    --accent-purple-hover: #5e3b90;
-
-    --text-primary: #202b3c;
-    --text-secondary: #4e5b6d;
-    --text-tertiary: #69778a;
-
-    --border: #d8e0ec;
-    --border-light: rgba(32, 43, 60, 0.12);
-
-    --gradient: linear-gradient(
-        135deg,
-        #245fbd 0%,
-        #7650a8 100%
-    );
-
-    --gradient-hover: linear-gradient(
-        135deg,
-        #174fA8 0%,
-        #5e3b90 100%
-    );
-
-    --shadow-sm: 0 2px 8px rgba(31, 45, 70, 0.05);
-    --shadow-md: 0 4px 16px rgba(31, 45, 70, 0.08);
-    --shadow-lg: 0 8px 24px rgba(31, 45, 70, 0.12);
-}
-
-/* Smooth theme changes */
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
-}
-
-/* The original navbar uses a fixed dark translucent background.
-   Replace it only when light mode is active. */
-html[data-theme="light"] .navbar {
-    background: rgba(246, 248, 252, 0.90);
-    border-bottom-color: var(--border);
-}
-
-html[data-theme="light"] .navbar.scrolled {
-    background: rgba(246, 248, 252, 0.97);
-}
-
-html[data-theme="light"] .nav-links.active {
-    background: var(--bg-dark);
-    border-color: var(--border);
-}
-
-/* Keep cards, forms and other variable-based surfaces consistent. */
-html[data-theme="light"] .stat-box,
-html[data-theme="light"] .expertise-box,
-html[data-theme="light"] .contact-card,
-html[data-theme="light"] .contact-form,
-html[data-theme="light"] .edu-card,
-html[data-theme="light"] .timeline-entry,
-html[data-theme="light"] .skill-card,
-html[data-theme="light"] .pub-item,
-html[data-theme="light"] .poster-card,
-html[data-theme="light"] .project-card {
-    background-color: var(--bg-card);
-    border-color: var(--border);
-}
-
-html[data-theme="light"] .form-group input,
-html[data-theme="light"] .form-group textarea {
-    background-color: #ffffff;
-    color: var(--text-primary);
-    border-color: var(--border);
-}
-
-html[data-theme="light"] .form-group input::placeholder,
-html[data-theme="light"] .form-group textarea::placeholder {
-    color: var(--text-tertiary);
-}
-
-/* Navigation theme toggle */
-.theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-
-    width: 42px;
-    height: 42px;
-    padding: 0;
-
-    background: var(--bg-card);
-    color: var(--text-primary);
-
-    border: 1px solid var(--border);
-    border-radius: 50%;
-
-    font-family: inherit;
-    font-size: 1.25rem;
-    line-height: 1;
-
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-    transform: rotate(12deg);
-}
-
-.theme-toggle:focus-visible {
-    outline: 2px solid var(--accent-purple);
-    outline-offset: 4px;
-}
-
-.theme-toggle span {
-    display: inline-block;
-}
-
-/* Keep the button usable beside the mobile menu. */
-@media (max-width: 968px) {
-    .theme-toggle {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    .nav-container {
-        gap: 0.75rem;
-    }
-
-    .nav-container .brand {
-        margin-right: auto;
+function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+    if (navMenu) {
+        navMenu.classList.toggle("active");
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    body,
-    .theme-toggle {
-        transition: none;
-    }
+function applyTheme(theme) {
+    const selectedTheme = theme === "light" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", selectedTheme);
 
-    .theme-toggle:hover {
-        transform: none;
+    const button = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+
+    if (button && icon) {
+        icon.textContent = selectedTheme === "dark" ? "☀" : "☾";
+        button.setAttribute(
+            "aria-label",
+            selectedTheme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+        );
+        button.setAttribute(
+            "title",
+            selectedTheme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+        );
     }
 }
+
+let savedTheme = "dark";
+
+try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    if (stored === "light" || stored === "dark") {
+        savedTheme = stored;
+    }
+} catch (error) {
+    // Use dark mode if browser storage is unavailable.
+}
+
+applyTheme(savedTheme);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("themeToggle");
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+            const current =
+                document.documentElement.getAttribute("data-theme");
+            const next = current === "dark" ? "light" : "dark";
+
+            applyTheme(next);
+
+            try {
+                localStorage.setItem(THEME_STORAGE_KEY, next);
+            } catch (error) {
+                // Theme switching still works without saved preferences.
+            }
+        });
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            const navMenu = document.getElementById("navMenu");
+            if (navMenu) {
+                navMenu.classList.remove("active");
+            }
+        });
+    });
+});
