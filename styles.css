@@ -839,11 +839,6 @@ footer {
     .project-card {
         padding: 2.75rem;
     }
-    
-    .research-nav {
-        position: static;
-        margin-bottom: 3rem;
-    }
 }
 
 @media (max-width: 968px) {
@@ -1254,8 +1249,10 @@ footer {
 
 /* RESEARCH */
 .research-nav {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    z-index: 100;
     margin-bottom: 3rem;
 }
 
