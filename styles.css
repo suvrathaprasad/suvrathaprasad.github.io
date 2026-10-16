@@ -752,6 +752,14 @@ section {
     border-top: 1px solid var(--border-light);
 }
 
+.project-paragraph {
+    margin-bottom: 1em;
+    line-height: inherit;
+}
+
+.project-paragraph:last-child {
+    margin-bottom: 0;
+}
 
 .meta-item {
     display: flex;
